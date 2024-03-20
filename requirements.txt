@@ -2,3 +2,4 @@ tqdm
 pandas
 scipy
 opencv-python
+pillow

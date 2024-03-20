@@ -2,3 +2,4 @@ __pycache__/
 models/__pycache__/
 checkpoint/BAID/model_best.pth
 checkpoint/ResNet_Pretrain/epoch_99.pth
+images/
