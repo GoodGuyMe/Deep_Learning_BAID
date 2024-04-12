@@ -106,16 +106,17 @@ class SAAN(nn.Module):
         super().__init__()
         self.GenAes = GAB()
         # self.StyAes = SAB()
+        num_features=1024
 
-        self.NLB = NonLocalBlock(in_channels=1536)
+        self.NLB = NonLocalBlock(in_channels=num_features)
 
         self.max_pool = nn.MaxPool2d(3, stride=2, padding=1)
         self.avg_pool = nn.AdaptiveAvgPool2d(output_size=(2, 2))
 
-        self.bn = nn.BatchNorm2d(num_features=1536)
+        self.bn = nn.BatchNorm2d(num_features=num_features)
 
         self.predictor = nn.Sequential(
-            nn.Linear(1536 * 4, 2048),
+            nn.Linear(num_features * 4, 2048),
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.5),
             nn.Linear(2048, num_classes),
