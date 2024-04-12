@@ -105,7 +105,7 @@ class SAAN(nn.Module):
     def __init__(self, num_classes) -> None:
         super().__init__()
         self.GenAes = GAB()
-        self.StyAes = SAB()
+        # self.StyAes = SAB()
 
         self.NLB = NonLocalBlock(in_channels=1536)
 
@@ -126,12 +126,12 @@ class SAAN(nn.Module):
 
     def forward(self, x):
         gen_aes = self.GenAes(x)
-        sty_aes = self.StyAes(x)
+        # sty_aes = self.StyAes(x)
 
-        sty_aes = self.max_pool(sty_aes)
+        # sty_aes = self.max_pool(sty_aes)
 
-        all_aes = torch.cat((sty_aes, gen_aes), 1)
-        all_aes = self.NLB(all_aes)
+        # all_aes = torch.cat((sty_aes, gen_aes), 1)
+        all_aes = self.NLB(gen_aes)
 
         all_aes = self.avg_pool(all_aes)
         all_aes = self.bn(all_aes)
