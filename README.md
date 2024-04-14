@@ -1,4 +1,10 @@
-## Official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+## Reproduction of official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+
+### Kaggle
+The code was run in kaggles, as a basis the reproduction notebook was used from the [Reproduction](GH-3) pull request.
+The code found in the 5 jupyter notebook files, containing the code to run Group Normalization(GN), 
+and Batch Normalization with different loss functions. The file names are descriptive for this.
+The changes made on kaggle are not yet put into the normal code on this repository.
 
 ### Dataset
 
