@@ -1,4 +1,10 @@
-## Official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+## Reproduction of official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+
+### Kaggle
+The code was run in kaggles, as a basis the reproduction notebook was used from the [Reproduction](GH-3) pull request.
+The code found in the [notebooks](hyper-param-optimization.ipynb) file contains code to test for the hyperparameter optimization.
+The changes made on kaggle are not yet put into the normal code on this repository.
+
 
 ### Dataset
 
