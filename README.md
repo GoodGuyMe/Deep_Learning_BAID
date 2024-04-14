@@ -1,4 +1,9 @@
-## Official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+## Reproduction of official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+
+### Kaggle
+The code was run in kaggles, for this the [reproduction](reproduction.ipynb) notebook was used.
+The changes made on kaggle are not yet put into the normal code on this repository.
+
 
 ### Dataset
 
