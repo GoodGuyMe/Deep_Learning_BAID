@@ -105,17 +105,18 @@ class SAAN(nn.Module):
     def __init__(self, num_classes) -> None:
         super().__init__()
         self.GenAes = GAB()
-        self.StyAes = SAB()
+        # self.StyAes = SAB()
+        num_features=1024
 
-        self.NLB = NonLocalBlock(in_channels=1536)
+        self.NLB = NonLocalBlock(in_channels=num_features)
 
         self.max_pool = nn.MaxPool2d(3, stride=2, padding=1)
         self.avg_pool = nn.AdaptiveAvgPool2d(output_size=(2, 2))
 
-        self.bn = nn.BatchNorm2d(num_features=1536)
+        self.bn = nn.BatchNorm2d(num_features=num_features)
 
         self.predictor = nn.Sequential(
-            nn.Linear(1536 * 4, 2048),
+            nn.Linear(num_features * 4, 2048),
             nn.ReLU(inplace=True),
             nn.Dropout(p=0.5),
             nn.Linear(2048, num_classes),
@@ -126,12 +127,12 @@ class SAAN(nn.Module):
 
     def forward(self, x):
         gen_aes = self.GenAes(x)
-        sty_aes = self.StyAes(x)
+        # sty_aes = self.StyAes(x)
 
-        sty_aes = self.max_pool(sty_aes)
+        # sty_aes = self.max_pool(sty_aes)
 
-        all_aes = torch.cat((sty_aes, gen_aes), 1)
-        all_aes = self.NLB(all_aes)
+        # all_aes = torch.cat((sty_aes, gen_aes), 1)
+        all_aes = self.NLB(gen_aes)
 
         all_aes = self.avg_pool(all_aes)
         all_aes = self.bn(all_aes)
