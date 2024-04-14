@@ -1,4 +1,12 @@
-## Official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+## Reproduction of official repository for CVPR2023 paper: "Towards Artistic Image Aesthetics Assessment: a Large-scale Dataset and a New Method"
+
+### Blog
+A pdf of our blog post about our findings of the reproduction can be found [here](Blog_78_CS_4240.pdf).
+
+The different pull requests in the repository show the studies performed on this paper, #3 is the reproduction code 
+written to work on Kaggle, #4 performs Hyperparameter optimization and #5 proposes a new algorithm variant using 
+different normalization techniques. Lastly an ablation study was performed in #1 and #2.
+
 
 ### Dataset
 
